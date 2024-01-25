@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="background-container">
+    <img src="../assets/img_jet.jpg" class="background-image" />
+    <div class="banner-container">
+      <img src="../assets/banner.jpg" class="banner-image" />
+    </div>
+  </div>
+
+  <div class="form-container">
+    <h1 class="form-title">ENCUENTRA TU VUELO CON AIRFLYR</h1>
+    <div>
+      <label for="origin">ORIGEN:</label>
+      <input id="origin" [(ngModel)]="origin" maxlength="3" (input)="onOriginChange()" />
+    </div>
+    <div>
+      <label for="destination">DESTINO:</label>
+      <input id="destination" [(ngModel)]="destination" maxlength="3" (input)="onDestinationChange()" />
+    </div>
+    <div>
+      <label class="checkbox-inline">
+        <input type="checkbox" id="checkboxEnLinea1" [(ngModel)]="idaChecked" (change)="onCheckboxChange('ida')"> Ida
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" id="checkboxEnLinea2" [(ngModel)]="idaYRegresoChecked" (change)="onCheckboxChange('idaYRegreso')"> Ida y Regreso
+      </label>
+    </div>
+    <!-- Formulario de Ida -->
+    <div *ngIf="verFechaIda()">
+      <label for="fechaIda">Fecha de Ida:</label>
+      <input *ngIf="verFechaIda()" type="date" id="fechaIda" [(ngModel)]="fechaIda" />
+    </div>
+    <!-- Formulario de Regreso (solo se mostrará si Ida y Regreso está seleccionado) -->
+    <div *ngIf="verFechaRegreso()">
+      <label for="fechaRegreso">Fecha de Regreso:</label>
+      <input *ngIf="verFechaRegreso()" type="date" id="fechaRegreso" [(ngModel)]="fechaRegreso" />
+    </div>
+    <div class="currency-container">
+      <label for="currency">PRECIO TIKETS:</label>
+      <select id="currency">
+        <option value="USD">Dólares (USD)</option>
+        <option value="EUR">Euros (EUR)</option>
+        <option value="COP">Pesos Col (COP)</option>
+      </select>
+    </div>
+    <div>
+      <button class="btn btn-primary" [disabled]="!isValid()" (click)="submitForm()"> BUSCAR </button>
+    </div>
+  </div>
+</div>

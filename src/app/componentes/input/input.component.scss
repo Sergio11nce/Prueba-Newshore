@@ -1,0 +1,56 @@
+.container
+{
+    position: relative;
+    text-align: center;
+    background-color: #4573d660;
+}
+.background-container
+{
+    margin-top: 30px;
+}
+.background-image
+{
+    width: 700%;
+    height: auto;
+    max-width: 953px;
+    z-index: -1;
+}
+.form-title
+{
+    color: #000;
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-family: 'Arial black', sans-serif;
+}
+.form-container
+{
+    position: absolute;
+    top: 32%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    background-color: #dedff3;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 440px;
+}
+.form-container div
+{
+    margin-bottom: 23px;
+}
+.form-container label
+{
+    margin-right: 10px;
+}
+.banner-container
+{
+    position: absolute;
+    top: -30px;
+    right: -110px;
+}
+.banner-image
+{
+    width: 230px;
+    height: 567px;
+    z-index: 2;
+}
